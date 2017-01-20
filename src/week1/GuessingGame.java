@@ -1,8 +1,8 @@
 package week1;
 import java.util.Random;
 /**
- * Game of Guessing a secret number
- * @author tharitpongsaneh
+ * An Object collecting a method for the Guessing game
+ * @author Tharit Pongsaneh
  *
  */
 public class GuessingGame {
@@ -15,55 +15,57 @@ public class GuessingGame {
 	
 	
 	/**
-	 * Initialize a new game.
-	 * @param upperbound is the max value for the secret number (>1).
+	 * Initialize a new valuable for the game.
+	 * @param upperBound,secret,hint,count
 	 */
-	GuessingGame(int upperbound){
-		this.upperBound = upperbound;
-		this.secret = getRandomNumber(upperBound);
+	GuessingGame(int upperBound){
+		this.upperBound = upperBound;
+		this.secret = getRandomNumber( upperBound );
 		this.hint = "I'm thinking of a number between 1 and 20";
 		this.count = 0;
 	}
 	/**
-	 * Create a random number between 1 and limit.
-	 * @param limit is the upper limit for random number
-	 * @return a random number between 1 and limit (inclusive)
+	 * Generate an object Random named 'rand' and return and int by the length from 1 to the limit.
+	 * @param limit
+	 * @return a random number between 1 and limit 
 	 */
 	private int getRandomNumber(int limit) {
 	   Random rand = new Random();
-	   return rand.nextInt(limit) + 1;
+	   return rand.nextInt( limit ) + 1;
 	}
 	/**
-	 * Guess method
+	 * This method is being use for checking either the input number is equal for the secret number or not,
+	 * then using method setHint to set the hint according to the difference between guessed number
+	 * and secret number
 	 * @param number,hint,count
 	 * @return true if your guessing is correct, else it will return false
 	 */
-	public boolean guess(int number){
-		if(number==this.secret) {
+	public boolean guess( int number ) {
+		if( number==this.secret ) {
 			++count;
-			setHint("Correct. You used "+getCount()+" guesses");
+			setHint( "Correct. You used " + getCount() + " guesses" );
 			return true;
 		}
-		else if(number<this.secret){
-			setHint("Sorry, your guess is too small");
+		else if ( number<this.secret ) {
+			setHint( "Sorry, your guess is too small" );
 			count++;
 			return false;
 		}
-		else{
-			setHint("Sorry, your guess is too big");
+		else {
+			setHint( "Sorry, your guess is too big" );
 			count++;
 			return false;
 		}
 	}
 	/**
 	 * Return a hint based on the most recent guess
-	 * @return hint based on most recent guess
+	 * @return hint based on the recent guessed
 	 */
 	public String getHint() {
 		return hint;
 	}
 	/**
-	 * set Hint
+	 * Set a hint based on the input String hint
 	 * @param hint
 	 */
 	protected void setHint(String hint) {
@@ -77,4 +79,15 @@ public class GuessingGame {
 	public int getCount() {
 		return count;
 	}
+	
+	/**
+	 * This method use to return upperBound values
+	 * @return upperBound you set
+	 */
+	public int getUpperBound() {
+		return upperBound;
+	}
+
+
+
 }
