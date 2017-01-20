@@ -4,10 +4,13 @@ package week1;
  * @author Tharit Pongsaneh
  */
 public class Main {
-	
-	public static void main(String[]args){
+	/**
+	 * Main method for generate Objects GuessingGame and GameConsole
+	 * @param args
+	 */
+	public static void main( String [] args ) {
 		GuessingGame game = new GuessingGame (20);
 		GameConsole ui = new GameConsole();
-		ui.play(game);
+		ui.play( game );
 	}
 }
