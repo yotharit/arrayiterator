@@ -16,10 +16,10 @@ public class GameConsole {
 		System.out.println( "I'm thinking of a number between 1 and " + game.getUpperBound() );
 		boolean guessing = false;
 		while( guessing == false ) {
-		System.out.print( "Your guess? " );
-		int number = scan.nextInt();
-		guessing = game.guess( number );
-		System.out.println( game.getHint() );
+			System.out.print( "Your guess? " );
+			int number = scan.nextInt();
+			guessing = game.guess( number );
+			System.out.println( game.getHint() );
 		}
 	}
 }
