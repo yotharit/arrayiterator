@@ -6,11 +6,13 @@ import java.util.Scanner;
  *
  */
 public class GameConsole {
+	
 	/**
 	 * This method print title and looping the command for input guessed number and print hint
 	 * @param game
 	 */
-	public void play ( GuessingGame game ) {
+	
+	public int play ( GuessingGame game ) {
 		Scanner scan = new Scanner( System.in );
 		System.out.println( "Guessing Game" );
 		System.out.println( "I'm thinking of a number between 1 and " + game.getUpperBound() );
@@ -21,5 +23,6 @@ public class GameConsole {
 			guessing = game.guess( number );
 			System.out.println( game.getHint() );
 		}
+		return game.getSecretNumber();
 	}
 }
