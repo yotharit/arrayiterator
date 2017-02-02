@@ -47,7 +47,7 @@ public class GuessingGame {
 
 	public boolean guess( int number ) {
 		if( number==this.secret ) {
-			++count;
+			count++;
 			setHint( "Correct! The Secret Number is " + getSecretNumber() + ". You used " + getCount() + " guesses" );
 			return true;
 		}
