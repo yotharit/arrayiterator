@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 /**
  * ArrayIterator work as a Iterator for array, its contain 3 method next, hasNext, and remove.
  * @author Tharit Pongsaneh
- *
  * @param <T> name give to the array by the user
  */
 
